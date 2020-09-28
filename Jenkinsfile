@@ -15,11 +15,11 @@ pipeline {
             }
         }
         stage('Sonar Analysis') {
-            steps {
+           steps {
                 echo 'Sonar Analysis.....'
-                sh 'mvn test sonar:sonar
-                    -Dsonar.host.url=http://107.20.121.249:9000 
-                    -Dsonar.login=d1854b1fb3df7df4777a2ece6bba5ad242a2c324'
+                sh 'mvn test sonar:sonar \
+  -Dsonar.host.url=http://107.20.121.249:9000 \
+  -Dsonar.login=d1854b1fb3df7df4777a2ece6bba5ad242a2c324'
             }          
         } 
        stage('Publish-release') {
