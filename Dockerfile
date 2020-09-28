@@ -10,12 +10,12 @@ WORKDIR /usr/src/app
 COPY . /usr/src/app
 
 # Install our packages
-RUN npm install
+RUN mvn package
 
 #Expose our application port
 EXPOSE 8080
 
 # Set start command
-CMD [ "npm", "start" ]
+CMD [ "mvn", "run" ]
 
 
